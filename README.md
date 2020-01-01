@@ -1,4 +1,4 @@
-# Task-Guided Pair Embedding in Heterogeneous Network (TapEm)
+# Task-Guided Pair Embedding in Heterogeneous Network (TapEM)
 
 <img src="https://github.com/pcy1302/TapEM/blob/master/motivations.png" height="300">
 
@@ -35,7 +35,16 @@ python main.py --embedder TapEM --pretrain
 author = {Park, Chanyoung and Kim, Donghyun and Zhu, Qi and Han, Jiawei and Yu, Hwanjo},
 title = {Task-Guided Pair Embedding in Heterogeneous Network},
 year = {2019},
+isbn = {9781450369763},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3357384.3357982},
+doi = {10.1145/3357384.3357982},
 booktitle = {Proceedings of the 28th ACM International Conference on Information and Knowledge Management},
-pages = {489–498}
+pages = {489–498},
+numpages = {10},
+keywords = {author identification, representation learning, deep learning, heterogeneous network},
+location = {Beijing, China},
+series = {CIKM ’19}
 }
 ```
