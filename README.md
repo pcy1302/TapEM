@@ -25,3 +25,17 @@ cd TapEM
 cd code
 python main.py --embedder TapEM --pretrain
 ```
+
+### Cite (Bibtex)
+- If you find ``TapEM`` useful in your research, please cite the following paper:
+  - Park, Chanyoung and Kim, Donghyun and Zhu, Qi and Han, Jiawei and Yu, Hwanjo. "Task-Guided Pair Embedding in Heterogeneous Network." CIKM 2019.
+  - Bibtex
+```
+@inproceedings{10.1145/3357384.3357982,
+author = {Park, Chanyoung and Kim, Donghyun and Zhu, Qi and Han, Jiawei and Yu, Hwanjo},
+title = {Task-Guided Pair Embedding in Heterogeneous Network},
+year = {2019},
+booktitle = {Proceedings of the 28th ACM International Conference on Information and Knowledge Management},
+pages = {489–498}
+}
+```
