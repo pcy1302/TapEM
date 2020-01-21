@@ -255,14 +255,28 @@ class Evaluator:
                         correct_num_auc += 1
 
             if idx <= int(len(self.dataset.test_p_id_list) / 2):
+                self.evaluate_p_num_dev_dict.setdefault(top_K, 0)
                 self.evaluate_p_num_dev_dict[top_K] += 1
+
+                self.recall_ave_dev_dict.setdefault(top_K, 0)
                 self.recall_ave_dev_dict[top_K] += float(correct_num) / len(pos_a_ids)
+
+                self.pre_ave_dev_dict.setdefault(top_K, 0)
                 self.pre_ave_dev_dict[top_K] += float(correct_num) / top_K
+
+                self.AUC_ave_dev_dict.setdefault(top_K, 0)
                 self.AUC_ave_dev_dict[top_K] += float(correct_num_auc) / pair_num
             else:
+                self.evaluate_p_num_test_dict.setdefault(top_K, 0)
                 self.evaluate_p_num_test_dict[top_K] += 1
+
+                self.recall_ave_test_dict.setdefault(top_K, 0)
                 self.recall_ave_test_dict[top_K] += float(correct_num) / len(pos_a_ids)
+
+                self.pre_ave_test_dict.setdefault(top_K, 0)
                 self.pre_ave_test_dict[top_K] += float(correct_num) / top_K
+
+                self.AUC_ave_test_dict.setdefault(top_K, 0)
                 self.AUC_ave_test_dict[top_K] += float(correct_num_auc) / pair_num
 
     def compute_reciprocal(self, gt_lst, false_lst):
@@ -275,6 +289,14 @@ class Evaluator:
         return incor_count
 
     def evaluate_Camel(self, model, embedder, model_path, st, epoch, p_text_deep_f, a_latent_f):
+        self.evaluate_p_num_dev_dict = {}
+        self.recall_ave_dev_dict = {}
+        self.pre_ave_dev_dict = {}
+        self.AUC_ave_dev_dict = {}
+        self.evaluate_p_num_test_dict = {}
+        self.recall_ave_test_dict = {}
+        self.pre_ave_test_dict = {}
+        self.AUC_ave_test_dict = {}
         paper_list = self.dataset.test_p_id_list
         for idx, target_paper in enumerate(paper_list):
             pos_a_ids = self.dataset.p_a_idx_dir_dict_test[target_paper]
@@ -300,6 +322,14 @@ class Evaluator:
         return self.print_result(model, embedder, model_path, epoch, st)
 
     def evaluate_TapEM(self, embedder, model_path, st, epoch, model):
+        self.evaluate_p_num_dev_dict = {}
+        self.recall_ave_dev_dict = {}
+        self.pre_ave_dev_dict = {}
+        self.AUC_ave_dev_dict = {}
+        self.evaluate_p_num_test_dict = {}
+        self.recall_ave_test_dict = {}
+        self.pre_ave_test_dict = {}
+        self.AUC_ave_test_dict = {}
         paper_list = sorted([paper for paper in self.dataset.p_a_idx_dir_dict_test])
         paper_matrix = model.store_rnn_matrix(paper_list, isEval=True).detach()
 
