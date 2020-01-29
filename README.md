@@ -31,10 +31,11 @@ python main.py --embedder TapEM --pretrain
   - Park, Chanyoung and Kim, Donghyun and Zhu, Qi and Han, Jiawei and Yu, Hwanjo. "Task-Guided Pair Embedding in Heterogeneous Network." CIKM 2019.
   - Bibtex
 ```
-@inproceedings{10.1145/3357384.3357982,
-author = {Park, Chanyoung and Kim, Donghyun and Zhu, Qi and Han, Jiawei and Yu, Hwanjo},
-title = {Task-Guided Pair Embedding in Heterogeneous Network},
-booktitle = {CIKM},
-year = {2019}
+@inproceedings{park2019task,
+  title={Task-Guided Pair Embedding in Heterogeneous Network},
+  author={Park, Chanyoung and Kim, Donghyun and Zhu, Qi and Han, Jiawei and Yu, Hwanjo},
+  booktitle={Proceedings of the 28th ACM International Conference on Information and Knowledge Management},
+  pages={489--498},
+  year={2019}
 }
 ```
